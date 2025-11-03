@@ -21,6 +21,11 @@ body {
   cursor: pointer;
 }
 
+.colors{
+  width: 60px;
+  height: 50px;
+}
+
 .cart {
   margin: 25px 100px;
   float: right;
@@ -161,8 +166,13 @@ textarea {
   margin-bottom: 20px;
 }
 
-ul {
-  list-style-type: none;
+.size{
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  gap: 50px; /* espace entre les deux colonnes */
+  align-items: flex-start;
+  margin-top: 20px;
 }
 
 @media only screen and (max-width: 600px) {

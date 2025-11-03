@@ -5,7 +5,6 @@ const product = "Socks"
 const image = socksImage
 const description = "Voici une chaussette "
 const url = "https://www.cpnv.ch"
-const inStock = true
 </script>
 
 <template>
@@ -18,8 +17,6 @@ const inStock = true
         <div class="product-image">
           <img :src="image" alt="Image des chaussettes"/>
         </div>
-        <p v-show="inStock">En stock</p>
-        <p v-show="!inStock">En rupture de stock</p>
       </div>
     </div>
   </div>

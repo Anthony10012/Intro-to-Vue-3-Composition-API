@@ -45,11 +45,11 @@ const shipping = computed(() => {
 
 const emit = defineEmits(['add-to-cart','remove-to-cart'])
 const addToCart = () => {
-  emit('add-to-cart')
+  emit('add-to-cart',variants.value[selectedVariant.value].id)
 }
 
 const removeToCart = ()=> {
-  emit('remove-to-cart')
+  emit('remove-to-cart',variants.value[selectedVariant.value].id)
 }
 const updateVariant = (index) => {
   selectedVariant.value = index

@@ -2,22 +2,23 @@
 import { ref } from 'vue'
 import ProductDisplay from '@/components/ProductDisplay.vue'
 
-const cart = ref(0)
+const cart = ref([])
 const premium = ref(true)
 
-function updateCart() {
-  cart.value += 1
+const updateCart = (id) => {
+  cart.value.push(id)
 }
 
-function RemoveCart() {
-  if (cart.value > 0){
-    cart.value -=1
+const RemoveCart = (id) =>{
+  const index = cart.value.indexOf(id)
+  if (index !== -1){
+    cart.value.splice(index, 1);
   }
 }
 </script>
   
 <template>
   <div class="nav-bar"></div>
-  <div class="cart">Cart({{ cart }})</div>
+  <div class="cart">Cart({{ cart.length }})</div>
   <ProductDisplay :premium="premium" @add-to-cart="updateCart" @remove-to-cart="RemoveCart"></ProductDisplay>
 </template>

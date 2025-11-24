@@ -88,8 +88,6 @@ const updateVariant = (index) => {
         </button>
          <button
           class="button" 
-          :class="{ disabledButton: !inStock }"
-          :disabled="!inStock"
           v-on:click="removeToCart"
         >
           Remove to cart

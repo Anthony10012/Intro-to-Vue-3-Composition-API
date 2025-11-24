@@ -10,7 +10,9 @@ function updateCart() {
 }
 
 function RemoveCart() {
-  cart.value -= 1
+  if (cart.value > 0){
+    cart.value -=1
+  }
 }
 </script>
   

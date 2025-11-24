@@ -45,12 +45,7 @@ const shipping = computed(()=>{
     }
 
 })
-
-const emit = defineEmits(['add-to-cart'])
-
-const addToCart = () => {
-  emit('add-to-cart')
-}
+const addToCart = () => cart.value += 1
 
 const updateVariant = (index) => {
   selectedVariant.value = index

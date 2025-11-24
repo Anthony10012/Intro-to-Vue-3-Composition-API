@@ -7,7 +7,8 @@ const product = ref('Socks')
 const brand = ref('Vue Mastery')
 
 const selectedVariant = ref(0)
-  
+
+
 const details = ref(['50% cotton', '30% wool', '20% polyester'])
 
 const variants = ref([
@@ -44,7 +45,12 @@ const shipping = computed(()=>{
     }
 
 })
-const addToCart = () => cart.value += 1
+
+const emit = defineEmits(['add-to-cart'])
+
+const addToCart = () => {
+  emit('add-to-cart')
+}
 
 const updateVariant = (index) => {
   selectedVariant.value = index

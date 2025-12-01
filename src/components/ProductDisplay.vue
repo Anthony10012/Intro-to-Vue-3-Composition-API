@@ -2,7 +2,8 @@
 import { ref, computed } from 'vue'
 import socksGreenImage from '@/assets/images/socks_green.jpeg'
 import socksBlueImage from '@/assets/images/socks_blue.jpeg'
-
+import ReviewForm from './ReviewForm.vue'
+import ReviewList from './ReviewList.vue'
 const props = defineProps({
   premium: {
     type: Boolean,
@@ -52,6 +53,12 @@ const addToCart = () => {
 const updateVariant = (index) => {
   selectedVariant.value = index
 }
+
+const reviews = ref([])
+// Méthode appelée quand l’enfant émet l’événement
+function addReview(productReview){
+  reviews.value.push(productReview)
+}
 </script>
 
 <template>
@@ -84,7 +91,15 @@ const updateVariant = (index) => {
         >
           Add to cart
         </button>
+        
       </div>
+      
     </div>
+
+    <!-- 🟢 Affichage de la liste -->
+    <review-list :reviews="reviews" ></review-list>
+     <!-- 🟢 Ajout du formulaire -->
+    <review-form @review-submitted="addReview"></review-form>
+
   </div>
 </template>
